@@ -1,0 +1,13 @@
+demo:
+  build:
+    image: myapp
+    dockerfile: Dockerfile
+  depends_on:
+    - redis
+    - postgres
+  environment:
+    TEST_TOKEN: Testing123
+redis:
+  image: redis:3.2.11
+postgres:
+  image: healthcheck/postgres:alpine
